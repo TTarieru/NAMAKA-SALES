@@ -1,0 +1,18 @@
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent form from submitting
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Predefined credentials for Nadi staff (you can securely store them in production)
+    const validUsername = "nadiStaff";
+    const validPassword = "nadi123";  // Ideally, use hashed passwords in production
+
+    if (username === validUsername && password === validPassword) {
+        // Redirect to the main dashboard page
+        window.location.href = "dashboard.html";
+    } else {
+        // Show error message
+        document.getElementById('errorMessage').innerText = "Invalid username or password!";
+    }
+});
